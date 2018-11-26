@@ -1,0 +1,27 @@
+#Tests a one to many join between two tables. Expecting 10 tuples.
+
+Schemes:
+  Animal(Age,Name,TypeID)
+  Type(TypeID,Type)
+
+Facts:
+  Animal('10','Rex','1').
+  Animal('2','Meow','2').
+  Animal('4','Buck','1').
+  Animal('4','Chummy','2').
+  Animal('1','Jerry','3').
+  Type('1','Dog').
+  Type('1','Dog2').
+  Type('2','Cat').
+  Type('2','Cat2').
+  Type('3','Hamster').
+  Type('3','Hamster2').
+
+# Ignore everything underneath
+Rules:
+  cn(c,n) :- snap(S,n,A,P),csg(c,S,G).
+  ncg(n,c,g) :- snap(S,n,A,P),csg(c,S,g).
+
+Queries:
+  cn('CS101',Name)?
+  ncg('Snoopy',Course,Grade)?

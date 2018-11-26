@@ -1,0 +1,5 @@
+  Age='1', Name='Jerry', TypeID='3', Type='Hamster'
+  Age='10', Name='Rex', TypeID='1', Type='Dog'
+  Age='2', Name='Meow', TypeID='2', Type='Cat'
+  Age='4', Name='Buck', TypeID='1', Type='Dog'
+  Age='4', Name='Chummy', TypeID='2', Type='Cat'

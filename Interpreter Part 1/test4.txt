@@ -1,0 +1,17 @@
+#Tests a join where the second table has 0 tuples. Expecting 0 tuples
+
+Schemes:
+  Animal(Age,Name,TypeID)
+  Type(TypeID,Type)
+
+Facts:
+  Animal('10','Rex','1').
+
+# Ignore everything underneath
+Rules:
+  cn(c,n) :- snap(S,n,A,P),csg(c,S,G).
+  ncg(n,c,g) :- snap(S,n,A,P),csg(c,S,g).
+
+Queries:
+  cn('CS101',Name)?
+  ncg('Snoopy',Course,Grade)?
